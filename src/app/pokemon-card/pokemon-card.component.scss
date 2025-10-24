@@ -1,0 +1,19 @@
+.pokemon-card {
+  .card-header {
+    .pokemon-type {
+      &[data-type="fire"] { background: #ffebee; color: #d32f2f; }
+      &[data-type="water"] { background: #e3f2fd; color: #1976d2; }
+      &[data-type="grass"] { background: #e8f5e8; color: #388e3c; }
+      &[data-type="electric"] { background: #fff8e1; color: #f57c00; }
+      &[data-type="psychic"] { background: #fce4ec; color: #c2185b; }
+      &[data-type="ghost"] { background: #f3e5f5; color: #7b1fa2; }
+      &[data-type="fighting"] { background: #fff3e0; color: #ef6c00; }
+      &[data-type="poison"] { background: #baa69c; color: #2e0811; }
+      &[data-type="bug"] { background: #efebe9; color: #f60810; }
+      &[data-type="rock"] { background: #e08a5f; color: #332e2d; }
+      &[data-type="fairy"] { background: #efebe9; color: #5d4037; }
+      &[data-type="dark"] { background: #efebe9; color: #5d4037; }
+      &[data-type="normal"] { background: #d1cfd8; color: #5d4037; }
+    }
+  }
+}

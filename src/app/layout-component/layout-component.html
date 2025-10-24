@@ -42,58 +42,11 @@
 
   @if (sortedResults.length > 0) {
     <div class="pokemon-grid">
-      @for (pokemon of sortedResults; track pokemon.id;) {
-        <div class="pokemon-card bg-white p-4">
-          <div class="card-header flex justify-between items-start">
-            <div class="flex flex-col">
-              <div class="flex items-center gap-2 mb-2">
-                <div class="pokemon-type p-2 rounded font-bold" [attr.data-type]="pokemon.type">
-                  {{ pokemon.type.toUpperCase() }}
-                </div>
-                <div class="text-xl">
-                  🏆
-                </div>
-              </div>
-              <p class="pokemon-name font-bold font-mono text-xl">{{ pokemon.name | titlecase }}</p>
-              <h4> ADO </h4>
-            </div>
-            <div class="pokemon-sprite">
-              <img [src]="pokemon.imageUrl" class="w-16 h-16 object-contain">
-            </div>
-          </div>
-
-          <div class="stats-section flex flex-row justify-between px-4 mt-4 gap-2">
-            <div class="win flex flex-col text-center bg-gray-100 rounded-lg p-3 flex-1">
-                <div class="text-sm font-medium">Win</div>
-                <div class="text-lg font-bold text-green-600">{{ pokemon.wins }}</div>
-            </div>
-
-            <div class="losses flex flex-col text-center bg-gray-100 rounded-lg p-3 flex-1">
-                <div class="text-sm font-medium">Losses</div>
-                <div class="text-lg font-bold text-red-600">{{ pokemon.losses }}</div>
-            </div>
-
-            <div class="ties flex flex-col text-center bg-gray-100 rounded-lg p-3 flex-1">
-                <div class="text-sm font-medium">Ties</div>
-                <div class="text-lg font-bold text-blue-600">{{ pokemon.ties }}</div>
-            </div>
-          </div>
-
-          <!-- Win Rate Progress Bar -->
-          <div class="progress-section px-4 mt-4">
-            <div class="flex justify-between items-center mb-2">
-              <span>Win Tie</span>
-              <span class="font-bold">{{ pokemon.winRate.toFixed(1) }}%</span>
-            </div>
-            <div class="bg-gray-200 rounded-full h-3">
-              <div class="bg-green-500 h-3 rounded-full" 
-                   [style.width.%]="getStatPercentage(pokemon.winRate, 100)">
-              </div>
-            </div>
-          </div>
-          
-          
-        </div>
+      @for (pokemon of sortedResults; track pokemon.id; let i = $index) {
+        <app-pokemon-card 
+          [pokemon]="pokemon" 
+          [rank]="i + 1">
+        </app-pokemon-card>
       }
     </div>
   }

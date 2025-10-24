@@ -1,12 +1,12 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { TournamentPokemon } from '@models';
-import { TitleCasePipe } from '@angular/common';
 import { simulateTournament } from '@utils/functions';
 import { SharedMaterialModule } from '../shared/shared-material.module';
+import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
 
 @Component({
   selector: 'app-layout-component',
-  imports: [TitleCasePipe, SharedMaterialModule],
+  imports: [SharedMaterialModule, PokemonCardComponent],
   templateUrl: './layout-component.html',
   styleUrl: './layout-component.scss',
 })
@@ -25,10 +25,6 @@ ngOnChanges(changes: SimpleChanges): void {
     this.tournamentResults = simulateTournament(this.pokemons);
     this.applySorting();
   }
-}
-
-getStatPercentage(statValue: number, maxValue: number): number {
-  return Math.min((statValue / maxValue) * 100, 100);
 }
 
 onSortByChange(value: string): void {
