@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterOutlet } from '@angular/router';
-import { LayoutContainer } from './layout-container/layout-container';
+import { LayoutContainerComponent } from './layout-container-component/layout-container-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LayoutContainer, HttpClientModule],
+  imports: [RouterOutlet, LayoutContainerComponent, HttpClientModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
