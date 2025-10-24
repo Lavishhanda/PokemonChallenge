@@ -1,12 +1,12 @@
 export interface TournamentPokemon {
 id: number;
 name: string;
-type: string; // Primary type name (e.g., 'grass', 'fire')
+type: string; 
 imageUrl: string; // Pokemon sprite image URL from API
 
 baseExperience: number;
 wins: number;
 losses: number;
 ties: number;
-winRate: number; // (wins / total battles) * 100
+winRate: number; // divide wins by total battles and multiply by 100
 }
