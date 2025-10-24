@@ -11,7 +11,7 @@ This application simulates a Pok√©mon tournament where 16 randomly selected Pok√
 - npm
 
 ### Installation
-```bash
+
 # Clone the repository
 git clone https://github.com/Lavishhanda/PokemonChallenge.git
 cd PokemonChallenge
